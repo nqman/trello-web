@@ -33,7 +33,7 @@ function Profiles() {
           aria-expanded={open ? 'true' : undefined}
         >
           <Avatar
-            sx={{ width: 30, height: 30 }}
+            sx={{ width: 35, height: 35, border: '1px solid #0943f1' }}
             alt="MNNG"
             src="https://avatars.githubusercontent.com/u/135507039?s=400&u=9e0b2aea0473f1090b637ba0401627ad16f1723e&v=4"
           />

@@ -1,17 +1,17 @@
 import AppsIcon from '@mui/icons-material/Apps'
-import Typography from '@mui/material/Typography'
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
+import { Badge, Button, TextField, Tooltip } from '@mui/material'
 import Box from '@mui/material/Box'
 import SvgIcon from '@mui/material/SvgIcon'
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
+import Typography from '@mui/material/Typography'
 import { ReactComponent as TrelloIcon } from '~/assets/trello.svg'
 import ModeSelect from '~/components/ModeSelect'
-import WorkSpaces from './Menu/WorkSpaces'
+import Profiles from './Menu/Profiles'
 import Recent from './Menu/Recent'
 import Starred from './Menu/Starred'
-import { Avatar, Badge, Button, TextField, Tooltip } from '@mui/material'
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
-import Profiles from './Menu/Profiles'
 import Templates from './Menu/Templates'
+import WorkSpaces from './Menu/WorkSpaces'
 
 export default function AppBar() {
   return (
@@ -22,7 +22,9 @@ export default function AppBar() {
         height: (theme) => theme.trello.appBarHeight,
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        gap: 2,
+        overflowX: 'auto'
       }}
       px={2}
     >
@@ -41,11 +43,13 @@ export default function AppBar() {
             >
               Trello
             </Typography>
-            <WorkSpaces />
-            <Recent />
-            <Starred />
-            <Templates />
-            <Button variant="outlined">Create</Button>
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1 }}>
+              <WorkSpaces />
+              <Recent />
+              <Starred />
+              <Templates />
+              <Button variant="outlined">Create</Button>
+            </Box>
           </Box>
         </Box>
       </Box>
@@ -55,6 +59,7 @@ export default function AppBar() {
           label="Search..."
           type="search"
           size="small"
+          sx={{ minWidth: '120px' }}
         />
         <ModeSelect />
         <Tooltip title="Notifications">

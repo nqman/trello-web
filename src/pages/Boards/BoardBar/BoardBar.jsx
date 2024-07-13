@@ -7,9 +7,9 @@ import AvatarGroup from '@mui/material/AvatarGroup'
 import AddToDriveIcon from '@mui/icons-material/AddToDrive'
 import BoltIcon from '@mui/icons-material/Bolt'
 import FilterListIcon from '@mui/icons-material/FilterList'
-import { Button, Tooltip } from '@mui/material'
+import Button from '@mui/material/Button'
+import Tooltip from '@mui/material/Tooltip'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
-import AddToPhotosIcon from '@mui/icons-material/AddToPhotos'
 function BoardBar() {
   const MENU_STYLE = {
     color: 'white',
@@ -38,7 +38,7 @@ function BoardBar() {
         borderTop: '1px solid #3498db',
         paddingX: 2,
         bgcolor: (theme) =>
-          theme.palette.mode === 'dark' ? '#34495e' : '#1976b2',
+          theme.palette.mode === 'dark' ? '#34495e' : '#1976d2',
         borderBottom: '1px solid white'
       }}
     >
@@ -107,7 +107,12 @@ function BoardBar() {
               width: '35px',
               height: '35px',
               fontSize: '15px',
-              border: 'none'
+              border: 'none',
+              color: 'white',
+              cursor: 'pointer',
+              '&:first-of-type': {
+                bgcolor: '#a4b0b3'
+              }
             }
           }}
           max={4}

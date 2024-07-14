@@ -1,12 +1,11 @@
 import Card from './Card/Card'
 
-function ListCards() {
+function ListCards({ cards }) {
   return (
     <>
-      <Card />
-      <Card temporaryHideCard />
-      <Card temporaryHideCard />
-      <Card temporaryHideCard />
+      {cards.map((card) => (
+        <Card key={card?._id} card={card} />
+      ))}
     </>
   )
 }
